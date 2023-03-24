@@ -29,7 +29,7 @@ local lightingProps = {
     GlobalShadows = true,
     OutdoorAmbient = Color3.fromRGB(0,0,0),
     ShadowSoftness = 0.2,
-    ClockTime = 17,
+    ClockTime = 24,
     GeographicLatitude = 45,
     ExposureCompensation = 1.3
 }
@@ -103,7 +103,7 @@ game.RunService.Stepped:Connect(function()
     for i,v in pairs(game.Players:GetPlayers()) do
         for i,v in pairs(v.Character.Uniform:GetDescendants()) do
             if v:IsA("BasePart") then
-                v.Reflectance = 0.35
+                v.Reflectance = 0.05
             end
         end
     end
