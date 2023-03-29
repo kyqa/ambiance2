@@ -20,8 +20,8 @@ disableConnections(lighting.ChildAdded)
 disableConnections(lighting.DescendantAdded)
 disableConnections(lighting.Changed)
 local lightingProps = {
-    Ambient = Color3.fromRGB(255,191,0),
-    Brightness = 1.25,
+    Ambient = Color3.fromRGB(100,100,100),
+    Brightness = 1.00,
     ColorShift_Bottom = Color3.fromRGB(0,0,65),
     ColorShift_Top = Color3.fromRGB(0,0,65),
     EnvironmentDiffuseScale = 0.3,
@@ -29,9 +29,9 @@ local lightingProps = {
     GlobalShadows = true,
     OutdoorAmbient = Color3.fromRGB(0,0,0),
     ShadowSoftness = 0.2,
-    ClockTime = 24,
+    ClockTime = 17,
     GeographicLatitude = 45,
-    ExposureCompensation = 1.3
+    ExposureCompensation = .75
 }
 local old_lightingProps = {}
 for i,_ in pairs(lightingProps) do
@@ -103,7 +103,7 @@ game.RunService.Stepped:Connect(function()
     for i,v in pairs(game.Players:GetPlayers()) do
         for i,v in pairs(v.Character.Uniform:GetDescendants()) do
             if v:IsA("BasePart") then
-                v.Reflectance = 0.05
+                v.Reflectance = 0.40
             end
         end
     end
